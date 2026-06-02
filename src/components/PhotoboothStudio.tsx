@@ -611,22 +611,12 @@ export default function PhotoboothStudio() {
               />
 
 
-              {/* Template frame guide overlay — shows while capturing */}
-              {selectedTemplate?.url && (
-                <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={selectedTemplate.url}
-                    alt="frame guide"
-                    className="absolute inset-0 w-full h-full object-cover opacity-70"
-                    style={{ mixBlendMode: 'normal' }}
-                  />
-                  {/* Darkened corners to visually indicate the framing area */}
-                  <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.25) 100%)'
-                  }} />
+              {/* Horizontal Safe-Zone Guide */}
+              <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center p-4">
+                <div className="w-full max-w-[90%] aspect-[3/2] border-2 border-white/50 rounded-lg" style={{ boxShadow: '0 0 0 9999px rgba(0,0,0,0.15)' }}>
+                  {/* Adds a slight dark overlay outside the safe zone */}
                 </div>
-              )}
+              </div>
 
               {/* Countdown overlay */}
               {countdown !== null && (
